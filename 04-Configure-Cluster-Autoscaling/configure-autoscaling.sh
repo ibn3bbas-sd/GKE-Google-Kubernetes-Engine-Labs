@@ -9,7 +9,7 @@ echo "Step 1: Creating a cluster without autoscaling..."
 gcloud container clusters create $CLUSTER_NAME \
     --region=$REGION \
     --disk-type=pd-standard \
-    --disk-size=10 \
+    --disk-size=12 \
     --num-nodes=1
 
 echo "Step 2: Adding a node pool with autoscaling..."

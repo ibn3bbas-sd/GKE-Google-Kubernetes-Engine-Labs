@@ -12,7 +12,7 @@ This project contains scripts and instructions for applying, updating, and remov
 
 1. **Create a cluster with labels**
 
-gcloud container clusters create gke-deep-dive --zone us-west1-a --num-nodes=1 --disk-type=pd-standard --disk-size=10 --labels=test=gke
+gcloud container clusters create gke-deep-dive --zone us-west1-a --num-nodes=1 --disk-type=pd-standard --disk-size=12 --labels=test=gke
 
 2. **Describe the cluster to verify labels**  
 
@@ -32,7 +32,3 @@ gcloud container clusters update gke-deep-dive --zone us-west1-a --remove-labels
 
 
 ---
-
-## License
-
-This project is licensed under the MIT License.

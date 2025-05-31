@@ -19,7 +19,7 @@ echo "Creating GKE cluster: $CLUSTER_NAME..."
 gcloud container clusters create $CLUSTER_NAME \
   --num-nodes=1 \
   --disk-type=pd-standard \
-  --disk-size=10
+  --disk-size=12
 
 echo "Cluster creation in progress... It may take around 10-15 minutes."
 
@@ -33,7 +33,7 @@ echo "Creating a multi-zone cluster..."
 gcloud container clusters create $CLUSTER_NAME \
   --num-nodes=3 \
   --disk-type=pd-standard \
-  --disk-size=10 \
+  --disk-size=12 \
   --zone us-central1-a \
   --node-locations $MULTI_ZONE
 

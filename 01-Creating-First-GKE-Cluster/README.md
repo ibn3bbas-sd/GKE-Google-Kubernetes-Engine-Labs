@@ -88,7 +88,7 @@ To create a **multi-zonal** cluster, use the `--node-locations` flag.
 gcloud container clusters create gke-deep-dive \
   --num-nodes=3 \
   --disk-type=pd-standard \
-  --disk-size=10 \
+  --disk-size=12 \
   --zone us-central1-a \
   --node-locations us-west1-a,us-west1-b,us-west1-c
 ```
@@ -112,7 +112,7 @@ You can also add a script in `scripts/create_multi_zone_cluster.sh` with:
 gcloud container clusters create gke-deep-dive \
   --num-nodes=3 \
   --disk-type=pd-standard \
-  --disk-size=10 \
+  --disk-size=12 \
   --zone us-central1-a \
   --node-locations us-west1-a,us-west1-b,us-west1-c
 ```

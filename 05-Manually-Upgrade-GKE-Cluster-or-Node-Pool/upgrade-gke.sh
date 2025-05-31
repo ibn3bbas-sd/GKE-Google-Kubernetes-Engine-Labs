@@ -6,13 +6,13 @@
 CLUSTER_NAME="gke-deep-dive"
 REGION="us-west1-a"
 NODE_POOL_NAME="default-pool"
-TARGET_VERSION="1.27.3-gke.1700"
+TARGET_VERSION="1.32.4-gke.1353000"
 
 echo "Creating GKE cluster..."
 gcloud container clusters create $CLUSTER_NAME \
     --region=$REGION \
     --disk-type=pd-standard \
-    --disk-size=10 \
+    --disk-size=12 \
     --num-nodes=1
 
 echo "Checking available versions..."
