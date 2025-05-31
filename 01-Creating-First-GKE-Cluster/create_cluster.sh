@@ -39,6 +39,6 @@ gcloud container clusters create $CLUSTER_NAME \
 
 # Delete the cluster (optional)
 echo "To delete the cluster, run the following command:"
-echo "gcloud container clusters delete $CLUSTER_NAME --quiet"
+echo "gcloud container clusters delete $CLUSTER_NAME --quiet --zone $COMPUTE_ZONE"
 
 echo "GKE setup completed!"

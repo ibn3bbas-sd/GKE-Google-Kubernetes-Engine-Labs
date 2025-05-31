@@ -30,3 +30,4 @@ gcloud container clusters upgrade $CLUSTER_NAME \
     --cluster-version $TARGET_VERSION
 
 echo "Upgrade process completed!"
+
