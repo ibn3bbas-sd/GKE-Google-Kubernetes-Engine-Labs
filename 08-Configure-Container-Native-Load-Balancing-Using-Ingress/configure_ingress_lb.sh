@@ -14,6 +14,7 @@ INGRESS_FILE="gke-deep-dive-ing.yaml"
 APP_NAME="gke-deep-dive-app"
 SERVICE_NAME="gke-deep-dive-svc"
 INGRESS_NAME="gke-deep-dive-ing"
+REGION="me-central1" # Qatar region | Dammam region=me-central2 
 
 function create_resources() {
     echo "Creating subnet in default VPC..."
