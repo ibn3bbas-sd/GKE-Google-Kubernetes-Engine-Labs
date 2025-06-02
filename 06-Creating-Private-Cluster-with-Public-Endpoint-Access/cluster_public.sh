@@ -20,7 +20,7 @@ function create_clusters() {
     gcloud container clusters create $PRIVATE_CLUSTER_NAME \
         --num-nodes=1 \
         --disk-type=pd-standard \
-        --disk-size=10 \
+        --disk-size=12 \
         --create-subnetwork name=$SUBNET_NAME \
         --enable-ip-alias \
         --enable-private-nodes \
@@ -31,7 +31,7 @@ function create_clusters() {
     gcloud container clusters create $PUBLIC_CLUSTER_NAME \
         --num-nodes=1 \
         --disk-type=pd-standard \
-        --disk-size=10 \
+        --disk-size=12 \
         --enable-master-authorized-networks \
         --subnetwork $SUBNET_NAME \
         --enable-private-nodes \
@@ -58,7 +58,7 @@ function update_cluster_access() {
     gcloud container clusters update $PUBLIC_CLUSTER_NAME \
         --zone $ZONE \
         --enable-master-authorized-networks \
-        --master-authorized-networks $PUBLIC_IP
+        --master-authorized-networks $PUBLIC_IP # $PUBLIC_IP/32
     
     echo "Enabling master global access if needed..."
     gcloud container clusters update $PUBLIC_CLUSTER_NAME \
