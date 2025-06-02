@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gke-deep-dive-svc
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'  # Enables NEG (Network Endpoint Group) creation
+spec:
+  type: ClusterIP
+  selector:
+    app: gke-deep-dive-app
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 9376

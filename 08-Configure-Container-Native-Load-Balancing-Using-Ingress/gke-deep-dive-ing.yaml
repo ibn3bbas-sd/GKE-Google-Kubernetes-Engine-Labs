@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gke-deep-dive-ing
+spec:
+  defaultBackend:
+    service:
+      name: gke-deep-dive-svc
+      port:
+        number: 80

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gke-deep-dive-app
+  name: gke-deep-dive-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gke-deep-dive-app
+  template:
+    metadata:
+      labels:
+        app: gke-deep-dive-app
+    spec:
+      containers:
+      - image: gcr.io/google-containers/serve_hostname
+        name: gke-deep-dive
+        ports:
+        - containerPort: 9376
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
