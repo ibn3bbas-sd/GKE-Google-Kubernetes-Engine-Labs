@@ -53,3 +53,8 @@ echo "Step 12: Get service details"
 kubectl get svc gke-deep-dive-svc
 
 echo "Deployment complete. Check EXTERNAL_IP and test using curl."
+
+ gcloud compute networks subnets create gke-deep-dive-subnet --network=default --range=10.10.0.0/24 --region=asia-south1
+ gcloud container clusters create gke-deep-dive --num-nodes=1 --disk-type=pd-standard --disk-size=12 --enable-ip-alias --subnetwork=gke-deep-dive-subnet --addons=HttpLoadBalancing --region=asia-south1
+ gcloud container clusters describe gke-deep-dive --region=asia-south1 | grep "enableIpAlias"
+
