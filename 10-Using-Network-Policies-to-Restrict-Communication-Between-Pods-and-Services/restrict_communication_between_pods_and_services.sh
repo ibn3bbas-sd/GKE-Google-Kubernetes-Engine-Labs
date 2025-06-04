@@ -7,7 +7,7 @@ gcloud config set compute/zone us-west1-a
 gcloud container clusters create gke-deep-dive \
   --num-nodes=1 \
   --disk-type=pd-standard \
-  --disk-size=10 \
+  --disk-size=12 \
   --enable-network-policy
 
 # Deploy Hello World application
