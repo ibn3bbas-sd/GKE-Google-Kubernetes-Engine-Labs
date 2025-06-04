@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shared-pod
+spec:
+  containers:
+  - name: shared-pod
+    image: nginx
+  tolerations:
+  - key: "function"
+    operator: "Equal"
+    value: "shared"
+    effect: "NoSchedule"
